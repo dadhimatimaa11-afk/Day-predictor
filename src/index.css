@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* dark blue gradient */
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: rgba(0, 0, 50, 0.4);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.7);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #00c6ff, 0 0 20px #0072ff;
+}
+
+/* Day buttons */
+button {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 12px 20px;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00c6ff, 0 0 35px #0072ff;
+}
+
+button:active {
+  transform: scale(0.95);
+  background: linear-gradient(90deg, #0072ff, #004e92);
+}
+
+/* Highlight selected day */
+button.selected {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  box-shadow: 0 0 25px #ff6ec4, 0 0 35px #7873f5;
+}
+
+/* Funny line box */
+.loading-box {
+  background: rgba(0, 0, 80, 0.8);
+  color: #00c6ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 0 0 20px #00c6ff, 0 0 40px #0072ff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #00c6ff; }
+  50% { box-shadow: 0 0 25px #00c6ff, 0 0 40px #0072ff; }
+  100% { box-shadow: 0 0 10px #00c6ff; }
+}
+
+/* Final popup box */
+.final-box {
+  position: relative;
+  background: rgba(0, 0, 50, 0.95);
+  color: #fff;
+  padding: 40px 30px;
+  margin-top: -120px; /* overlap on loading-box */
+  border-radius: 20px;
+  width: 85%;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  box-shadow: 0 0 30px #00c6ff, 0 0 60px #0072ff;
+
+  /* popup animation */
+  animation: popIn 0.9s ease-out forwards;
+  transform: scale(0.7);
+  opacity: 0;
+  z-index: 10;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.final-box h2 {
+  font-size: 2.5rem;
+  color: #00c6ff;
+  text-shadow: 0 0 20px #00c6ff, 0 0 40px #0072ff;
+  margin-bottom: 15px;
+}
+
+.final-box p {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #add8e6;
+}
+
+/.final-box .id-btn {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff6ec4, 0 0 40px #7873f5;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.final-box .id-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #ff6ec4, 0 0 60px #7873f5;
+}
